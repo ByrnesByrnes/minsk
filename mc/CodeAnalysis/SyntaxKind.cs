@@ -18,7 +18,8 @@ namespace mc.CodeAnalysis
 
         // Expression
         LiteralExpression,
+		UnaryExpression,
         BinaryExpression,
         ParenthesizedExpression
-    }
+	}
 }
