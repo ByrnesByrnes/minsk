@@ -2,23 +2,23 @@
 
 namespace mc.CodeAnalysis
 {
-    sealed class SyntaxTree
-    {
-        public SyntaxTree(IEnumerable<string> diagnostics, ExpressionSyntax root, SyntaxToken EndOfFileToken)
-        {
-            Diagnostics = diagnostics.ToArray();
-            Root = root;
-            this.EndOfFileToken = EndOfFileToken;
-        }
+	public sealed class SyntaxTree
+	{
+		public SyntaxTree(IEnumerable<string> diagnostics, ExpressionSyntax root, SyntaxToken EndOfFileToken)
+		{
+			Diagnostics = diagnostics.ToArray();
+			Root = root;
+			this.EndOfFileToken = EndOfFileToken;
+		}
 
-        public IReadOnlyList<string> Diagnostics { get; }
-        public ExpressionSyntax Root { get; }
-        public SyntaxToken EndOfFileToken { get; }
+		public IReadOnlyList<string> Diagnostics { get; }
+		public ExpressionSyntax Root { get; }
+		public SyntaxToken EndOfFileToken { get; }
 
-        public static SyntaxTree Parse(string text)
-        {
-            var parser = new Parser(text);
-            return parser.Parse();
-        }
-    }
+		public static SyntaxTree Parse(string text)
+		{
+			var parser = new Parser(text);
+			return parser.Parse();
+		}
+	}
 }

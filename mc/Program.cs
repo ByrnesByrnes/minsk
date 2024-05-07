@@ -4,11 +4,11 @@ using mc.CodeAnalysis;
 
 namespace mc
 {
-    class Program
+	internal static class Program
 	{
-		static void Main(string[] args)
+		private static void Main()
 		{
-			bool showTree = false;
+			var showTree = false;
 
 			while (true)
 			{
@@ -24,19 +24,25 @@ namespace mc
 					Console.WriteLine(showTree ? "Showing parse trees." : "Not showing parse trees");
 					continue;
 				}
+				else if (line == "#cls")
+				{
+					Console.Clear();
+					continue;
+				}
 
 				var syntaxTree = SyntaxTree.Parse(line);
 
-				var color = Console.ForegroundColor;
 				if (showTree)
 				{
+					var color = Console.ForegroundColor;
 					Console.ForegroundColor = ConsoleColor.DarkGray;
 					PrettyPrint(syntaxTree.Root);
-					Console.ForegroundColor = color;
+					Console.ResetColor();
 				}
 
 				if (syntaxTree.Diagnostics.Any())
 				{
+					var color = Console.ForegroundColor;
 					Console.ForegroundColor = ConsoleColor.DarkRed;
 
 					foreach (var diagnostic in syntaxTree.Diagnostics)
@@ -44,7 +50,7 @@ namespace mc
 						Console.WriteLine(diagnostic);
 					}
 
-					Console.ForegroundColor = color;
+					Console.ResetColor();
 				}
 				else
 				{
@@ -61,7 +67,6 @@ namespace mc
 			// └──
 			// │
 			// ├──
-
 
 			var marker = isLast ? "└── " : "├── ";
 
