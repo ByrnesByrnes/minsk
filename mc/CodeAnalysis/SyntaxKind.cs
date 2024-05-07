@@ -17,7 +17,7 @@ namespace mc.CodeAnalysis
         CloseParenthesisToken,
 
         // Expression
-        NumberExpression,
+        LiteralExpression,
         BinaryExpression,
         ParenthesizedExpression
     }
