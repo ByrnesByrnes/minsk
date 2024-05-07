@@ -1,8 +1,8 @@
-﻿// See https://aka.ms/new-console-template for more information
+﻿using mc.CodeAnalysis.Syntax;
 
 namespace mc.CodeAnalysis
 {
-	public sealed class Evaluator
+    public sealed class Evaluator
 	{
 		private readonly ExpressionSyntax _root;
 

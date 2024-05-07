@@ -1,6 +1,4 @@
-﻿// See https://aka.ms/new-console-template for more information
-
-namespace mc.CodeAnalysis
+﻿namespace mc.CodeAnalysis.Syntax
 {
     public abstract class SyntaxNode
     {

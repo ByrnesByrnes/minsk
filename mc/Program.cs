@@ -1,10 +1,9 @@
-﻿// See https://aka.ms/new-console-template for more information
-
-using mc.CodeAnalysis;
+﻿using mc.CodeAnalysis;
+using mc.CodeAnalysis.Syntax;
 
 namespace mc
 {
-	internal static class Program
+    internal static class Program
 	{
 		private static void Main()
 		{
